@@ -7,7 +7,7 @@ export interface ContextPackOptions {
   copy: boolean;
   watch: boolean;
   stats: boolean;
-  maxFileSize: number; // bytes
+  maxFileSize: number;
 }
 
 export interface FileEntry {
