@@ -1,27 +1,39 @@
 {
   "name": "contextpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Bundle your codebase into a single LLM-ready file. Stop copy-pasting files into Claude/ChatGPT.",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "bin": {
+    "contextpack": "./dist/cli.js",
+    "ctx": "./dist/cli.js"
   },
-  "keywords": [],
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts --format cjs --dts --clean",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "llm", "ai", "context", "codebase", "claude", "chatgpt",
+    "openai", "developer-tools", "cli", "typescript"
+  ],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
-    "chalk": "^5.6.2",
-    "chokidar": "^5.0.0",
-    "clipboardy": "^5.3.1",
-    "ignore": "^7.0.5",
+    "chokidar": "^3.6.0",
+    "clipboardy": "^4.0.0",
+    "chalk": "^5.3.0",
+    "ignore": "^5.3.1",
     "minimist": "^1.2.8"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.5",
-    "@types/node": "^25.5.0",
-    "tsup": "^8.5.1",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }
